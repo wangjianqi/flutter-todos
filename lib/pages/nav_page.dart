@@ -13,6 +13,7 @@ import 'package:todo_list/widgets/nav_head.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
 import 'image_page.dart';
+import 'login_page.dart';
 import 'navigator_setting_page.dart';
 
 class NavPage extends StatelessWidget {
@@ -74,6 +75,16 @@ class NavPage extends StatelessWidget {
           onTap: () {
             Navigator.push(context, new CupertinoPageRoute(builder: (ctx) {
               return SettingPage();
+            }));
+          },
+        ),
+        ListTile(
+          title: Text("登录测试"),
+          leading: Icon(Icons.accessibility_new),
+          trailing: Icon(Icons.keyboard_arrow_right),
+          onTap: () {
+            Navigator.push(context, new CupertinoPageRoute(builder: (ctx) {
+              return LoginPage();
             }));
           },
         ),

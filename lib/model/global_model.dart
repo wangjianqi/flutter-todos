@@ -5,6 +5,7 @@ import 'package:todo_list/logic/all_logic.dart';
 import 'package:todo_list/model/main_page_model.dart';
 import 'package:todo_list/utils/theme_util.dart';
 import 'package:todo_list/widgets/net_loading_widget.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class GlobalModel extends ChangeNotifier {
   GlobalLogic logic;
@@ -55,6 +56,10 @@ class GlobalModel extends ChangeNotifier {
 
   //导航栏头部选择网络图片时的图片地址
   String currentNetPicUrl = "";
+
+  //初始化google验证和firebase验证
+  final GoogleSignIn googleSignIn = GoogleSignIn(
+  );
 
   GlobalModel() {
     logic = GlobalLogic(this);

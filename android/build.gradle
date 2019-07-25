@@ -6,6 +6,8 @@ buildscript {
 
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.1'
+        // 谷歌服务
+        classpath 'com.google.gms:google-services:4.3.0'
     }
 
     //下面这部分是修复androidx.core冲突的问题
