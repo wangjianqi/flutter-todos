@@ -141,6 +141,7 @@ class MainPage extends StatelessWidget {
                     ? model.logic.getEmptyWidget(globalModel)
                     : Container(
                         margin: EdgeInsets.only(top: 40, bottom: 40),
+                        ///滑动Widget
                         child: CarouselSlider(
                           items: model.logic.getCards(context),
                           aspectRatio: 16 / 9,

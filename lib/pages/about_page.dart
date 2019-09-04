@@ -23,12 +23,11 @@ class AboutPage extends StatefulWidget {
 class _AboutPageState extends State<AboutPage> {
   List<String> descriptions = [];
 
-
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     final globalModel = Provider.of<GlobalModel>(context);
-    if(descriptions.isEmpty){
+    if (descriptions.isEmpty) {
       descriptions.add(DemoLocalizations.of(context).version106);
       descriptions.add(DemoLocalizations.of(context).version105);
       descriptions.add(DemoLocalizations.of(context).version104);
@@ -57,6 +56,7 @@ class _AboutPageState extends State<AboutPage> {
           child: NotificationListener<OverscrollIndicatorNotification>(
             onNotification: (overScroll) {
               overScroll.disallowGlow();
+              return false;
             },
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -99,6 +99,7 @@ class _AboutPageState extends State<AboutPage> {
                               ),
                             ),
                           ),
+                          ///版本
                           Expanded(
                             child: Container(
                               alignment: Alignment.bottomLeft,
@@ -146,11 +147,12 @@ class _AboutPageState extends State<AboutPage> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(20))),
                       child: Container(
-                        margin: EdgeInsets.only(left: 20, top: 30,right: 20),
+                        margin: EdgeInsets.only(left: 20, top: 30, right: 20),
                         child: NotificationListener<
                             OverscrollIndicatorNotification>(
                           onNotification: (overScroll) {
                             overScroll.disallowGlow();
+                            return false;
                           },
                           child: ListView(
                               children: List.generate(descriptions.length + 1,
@@ -159,7 +161,8 @@ class _AboutPageState extends State<AboutPage> {
                               return Container(
                                 margin: EdgeInsets.only(bottom: 20),
                                 child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: <Widget>[
                                     Text(
                                       DemoLocalizations.of(context)
@@ -175,10 +178,13 @@ class _AboutPageState extends State<AboutPage> {
                                         style: TextStyle(color: Colors.blue),
                                       ),
                                       onTap: () {
-                                        Navigator.of(context).push(new CupertinoPageRoute(builder: (ctx) {
+                                        Navigator.of(context).push(
+                                            new CupertinoPageRoute(
+                                                builder: (ctx) {
                                           return WebViewPage(
                                             "https://github.com/asjqkkkk/todo-list-app",
-                                            title: DemoLocalizations.of(context).myGithub,
+                                            title: DemoLocalizations.of(context)
+                                                .myGithub,
                                           );
                                         }));
                                       },
@@ -226,7 +232,6 @@ class _AboutPageState extends State<AboutPage> {
       ),
     );
   }
-
 
   void checkUpdate(GlobalModel globalModel) {
     final loadingController = globalModel.loadingController;

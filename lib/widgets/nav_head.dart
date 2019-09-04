@@ -160,6 +160,7 @@ class _NavHeadState extends State<NavHead> with SingleTickerProviderStateMixin {
     );
   }
 
+  ///随机颜色
   List<Color> getRandomColor(BuildContext context, {int times}) {
     final List<Color> randomColorList = [
       Theme.of(context).primaryColor,
@@ -190,6 +191,7 @@ class _NavHeadState extends State<NavHead> with SingleTickerProviderStateMixin {
         (pi * 2) * randomPosOrNeg * randomNumberTwo;
   }
 
+  ///雨滴动画
   List<Widget> getRain(double navHeaderHeight, BuildContext context) {
     final randomNum = Random().nextInt(50) + 1;
 

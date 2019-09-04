@@ -43,6 +43,7 @@ class LoginPage extends StatelessWidget {
       ),
       body: Stack(
         children: <Widget>[
+          ///背景动画
           FlareActor(
             "flrs/login_bg.flr",
             animation: model.currentAnimation,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+///从底部向上的动画动画
 class BottomToTopWidget extends StatefulWidget {
   final Widget child;
   final int index;
@@ -36,6 +37,7 @@ class _BottomToTopWidgetState extends State<BottomToTopWidget>
 
   @override
   Widget build(BuildContext context) {
+    ///
     final size = MediaQuery.of(context).size;
 
     return AnimatedBuilder(

@@ -22,6 +22,7 @@ class LoginPageLogic {
     _model.refresh();
   }
 
+  ///邮箱验证
   String validatorEmail(String email) {
     final context = _model.context;
     _model.isEmailOk = false;

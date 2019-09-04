@@ -44,6 +44,7 @@ class LoginWidget extends StatelessWidget {
                           prefixIcon: Icon(
                             Icons.email,
                           ),
+                          ///清除按钮
                           suffixIcon: IconButton(
                             icon: Icon(Icons.cancel),
                             onPressed: () => Future.delayed(
@@ -125,6 +126,7 @@ class LoginWidget extends StatelessWidget {
                   child: Container(
                     height: 60,
                     width: size.width - 80,
+                    ///FlatButton
                     child: FlatButton(
                       color: primaryColor.withOpacity(0.3),
                       highlightColor: primaryColorLight,
